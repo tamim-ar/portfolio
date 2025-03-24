@@ -1,0 +1,26 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_1_2)">
+    <path fill="currentColor" d="M64 0H0V64H64V0Z" fill-opacity="0"/>
+    <path fill="currentColor" d="M2 2H0V0H2V2Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M18 2H16V0H18V2Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M34 2H32V0H34V2Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M50 2H48V0H50V2Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M2 18H0V16H2V18Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M18 18H16V16H18V18Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M34 18H32V16H34V18Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M50 18H48V16H50V18Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M2 34H0V32H2V34Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M18 34H16V32H18V34Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M34 34H32V32H34V34Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M50 34H48V32H50V34Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M2 50H0V48H2V50Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M18 50H16V48H18V50Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M34 50H32V48H34V50Z" fill-opacity="0.1"/>
+    <path fill="currentColor" d="M50 50H48V48H50V50Z" fill-opacity="0.1"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_1_2">
+      <rect width="64" height="64" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
