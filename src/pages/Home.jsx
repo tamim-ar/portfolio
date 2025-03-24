@@ -90,7 +90,7 @@ const Home = () => {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
                   <span className="block text-gray-900 dark:text-white">Software Quality</span>
                   <span className="block bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
-                    Assurance Engineer
+                    Assurance Engineer420
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl">
