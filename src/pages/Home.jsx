@@ -90,7 +90,7 @@ const Home = () => {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
                   <span className="block text-gray-900 dark:text-white">Software Quality</span>
                   <span className="block bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
-                    Assurance Engineer100
+                    Assurance Engineer200
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl">
@@ -124,7 +124,7 @@ const Home = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl blur-2xl opacity-20 animate-pulse" />
                 <img 
-                  src="../image/dp.jpg" 
+                  src="../../image/dp.jpg" 
                   alt="Tamim Ahasan Rijon"
                   className="relative rounded-3xl shadow-2xl w-full max-w-md mx-auto"
                 />
