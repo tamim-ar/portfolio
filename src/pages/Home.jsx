@@ -124,7 +124,7 @@ const Home = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl blur-2xl opacity-20 animate-pulse" />
                 <img 
-                  src="../image/dp.jpg" 
+                  src="./image/dp.jpg" 
                   alt="Tamim Ahasan Rijon"
                   className="relative rounded-3xl shadow-2xl w-full max-w-md mx-auto"
                 />
