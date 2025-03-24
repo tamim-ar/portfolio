@@ -146,7 +146,7 @@ const Home = () => {
               Competitive Programming
             </h2>
             <p className="text-center text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12">
-              Solved 200+ problems in OOP, DSA, and coding challenges of varying difficulty across online judges. 
+              Solved 300+ problems in OOP, DSA, and coding challenges of varying difficulty across online judges. 
               Focused on improving problem-solving, mastering algorithms, and enhancing logical thinking. 
               Also participated in multiple programming contests to refine competitive coding skills.
             </p>
