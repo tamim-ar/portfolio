@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { format } from 'date-fns';
 import { getPostBySlug } from '../utils/blogUtils';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const BlogPost = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const [post, setPost] = useState(null);
 
   useEffect(() => {
@@ -33,6 +35,13 @@ const BlogPost = () => {
       animate={{ opacity: 1 }}
       className="container mx-auto px-4 py-16"
     >
+      <button
+        onClick={() => navigate('/blog')}
+        className="mb-8 flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+      >
+        <FaArrowLeft />
+        <span>Back to Blog</span>
+      </button>
       <article className="prose prose-lg dark:prose-invert max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           {post.title}
