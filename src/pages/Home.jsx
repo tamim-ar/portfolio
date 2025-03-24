@@ -72,9 +72,9 @@ const Home = () => {
     <div className="relative min-h-screen">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 to-secondary-50/50 dark:from-gray-900/50 dark:to-gray-800/50 -z-10" />
-      
+
       <div className="relative pt-20 lg:pt-32">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="container mx-auto px-4 sm:px-6 lg:px-8"
@@ -97,7 +97,7 @@ const Home = () => {
                   Ensuring software excellence through comprehensive testing and automation strategies.
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                  <a href="/contact" 
+                  <a href="/contact"
                     className="bg-primary-500 text-white hover:bg-primary-600 px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all">
                     Get in touch
                   </a>
@@ -114,8 +114,8 @@ const Home = () => {
                 </div>
               </motion.div>
             </div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4 }}
@@ -123,8 +123,8 @@ const Home = () => {
             >
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl blur-2xl opacity-20 animate-pulse" />
-                <img 
-                  src="./image/dp.jpg" 
+                <img
+                  src="/image/dp.jpg"
                   alt="Tamim Ahasan Rijon"
                   className="relative rounded-3xl shadow-2xl w-full max-w-md mx-auto"
                 />
@@ -132,13 +132,13 @@ const Home = () => {
             </motion.div>
           </div>
         </motion.div>
-        
+
         {/* Replace the old technologies section with the new SkillSection */}
-        <SkillSection 
+        <SkillSection
           technologies={technologies}
           skillCategories={skillCategories}
         />
-        
+
         {/* Competitive Programming section */}
         <div className="py-16">
           <div className="container mx-auto px-4">
@@ -146,8 +146,8 @@ const Home = () => {
               Competitive Programming
             </h2>
             <p className="text-center text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12">
-              Solved 300+ problems in OOP, DSA, and coding challenges of varying difficulty across online judges. 
-              Focused on improving problem-solving, mastering algorithms, and enhancing logical thinking. 
+              Solved 300+ problems in OOP, DSA, and coding challenges of varying difficulty across online judges.
+              Focused on improving problem-solving, mastering algorithms, and enhancing logical thinking.
               Also participated in multiple programming contests to refine competitive coding skills.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -181,7 +181,7 @@ const Home = () => {
 };
 
 const SocialLink = ({ href, icon }) => (
-  <a 
+  <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
