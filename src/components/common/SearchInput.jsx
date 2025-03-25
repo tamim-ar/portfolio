@@ -2,7 +2,7 @@ import { FaSearch } from 'react-icons/fa';
 
 export const SearchInput = ({ value, onChange, placeholder }) => {
   return (
-    <div className="relative w-full max-w-md mb-8">
+    <div className="relative w-full">
       <input
         type="text"
         value={value}

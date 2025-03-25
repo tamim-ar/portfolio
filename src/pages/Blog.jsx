@@ -37,13 +37,20 @@ const Blog = () => {
       animate={{ opacity: 1 }}
       className="container mx-auto px-4 py-16"
     >
-      <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 md:mb-0">Blog</h1>
-        <SearchInput
-          value={searchQuery}
-          onChange={setSearchQuery}
-          placeholder="Search blog posts..."
-        />
+      <div className="mb-8">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Blog</h1>
+        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          Insights and articles about software testing, automation strategies, quality assurance best practices, and development workflows.
+        </p>
+        <div className="flex justify-end">
+          <div className="w-full max-w-md">
+            <SearchInput
+              value={searchQuery}
+              onChange={setSearchQuery}
+              placeholder="Search blog posts..."
+            />
+          </div>
+        </div>
       </div>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {filteredPosts.map((post) => (

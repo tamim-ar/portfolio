@@ -4,6 +4,7 @@ import { MdEmail } from 'react-icons/md';
 import { FaPython, FaJava, FaJs, FaHtml5, FaCss3Alt, FaReact, FaGitAlt } from 'react-icons/fa';
 import { SiSelenium, SiJunit5, SiTestinglibrary, SiPostman, SiPlaywright, SiJira } from 'react-icons/si';
 import { SkillSection } from '../components/skills/SkillSection';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const technologies = [
@@ -97,13 +98,20 @@ const Home = () => {
                   Ensuring software excellence through comprehensive testing and automation strategies.
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                  <a href="/contact"
-                    className="bg-primary-500 text-white hover:bg-primary-600 px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all">
-                    Get in touch
+                  <a href="https://drive.google.com/file/d/1ezqxBobCsZ5y-jpUVTZsi9rwEZklKj_U/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+                  >
+                    Download Resume
                   </a>
                   <a href="/projects"
                     className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700">
                     View Projects
+                  </a>
+                  <a href="/contact"
+                    className="bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700">
+                    Get in touch
                   </a>
                 </div>
                 <div className="flex items-center gap-4">
@@ -129,6 +137,54 @@ const Home = () => {
                   className="relative rounded-3xl shadow-2xl w-full max-w-md mx-auto"
                 />
               </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Featured Links Section - NEW */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="container mx-auto px-4 py-16"
+        >
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="card p-8 bg-gradient-to-br from-primary-500/10 to-primary-500/5 border border-primary-500/20"
+            >
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                Explore My Projects
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Browse through my portfolio of software quality assurance and development projects.
+              </p>
+              <Link
+                to="/projects"
+                className="inline-flex items-center gap-2 text-primary-500 hover:text-primary-600 font-medium"
+              >
+                View Projects
+                <span aria-hidden="true">→</span>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="card p-8 bg-gradient-to-br from-secondary-500/10 to-secondary-500/5 border border-secondary-500/20"
+            >
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                Read My Blog
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Insights and articles about software testing, automation, and quality assurance.
+              </p>
+              <Link
+                to="/blog"
+                className="inline-flex items-center gap-2 text-secondary-500 hover:text-secondary-600 font-medium"
+              >
+                Read Articles
+                <span aria-hidden="true">→</span>
+              </Link>
             </motion.div>
           </div>
         </motion.div>
