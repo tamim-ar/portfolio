@@ -105,12 +105,10 @@ const Home = () => {
                   >
                     Download Resume
                   </a>
-                  <a href="/projects"
-                    className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700">
-                    View Projects
-                  </a>
-                  <a href="/contact"
-                    className="bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700">
+                  <a
+                    href="mailto:tamimahasan.ar@gmail.com"
+                    className="bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700"
+                  >
                     Get in touch
                   </a>
                 </div>
@@ -119,6 +117,7 @@ const Home = () => {
                   <SocialLink href="https://www.linkedin.com/in/tamim-ar" icon={<FaLinkedin />} />
                   <SocialLink href="https://www.facebook.com/hellotamim" icon={<FaFacebook />} />
                   <SocialLink href="https://www.instagram.com/tamim__ahasan" icon={<FaInstagram />} />
+                  <SocialLink href="mailto:tamimahasan.ar@gmail.com" icon={<MdEmail />} />
                 </div>
               </motion.div>
             </div>
