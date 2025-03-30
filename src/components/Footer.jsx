@@ -23,7 +23,7 @@ const Footer = () => {
             <div className="grid grid-cols-2 gap-2">
               <FooterLink href="/about">About</FooterLink>
               <FooterLink href="/projects">Projects</FooterLink>
-              <FooterLink href="/blog">Blog</FooterLink>
+              <FooterLink href="/articles">Articles</FooterLink>
             </div>
           </div>
 

@@ -171,14 +171,14 @@ const Home = () => {
               whileHover={{ y: -5 }}
               className="card p-8 bg-gradient-to-br from-secondary-500/10 to-secondary-500/5 border border-secondary-500/20"
             >
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Read My Blog
-              </h3>
+              <div className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                Read My Articles
+              </div>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Insights and articles about software testing, automation, and quality assurance.
+                Technical articles about software testing, automation, and quality assurance.
               </p>
               <Link
-                to="/blog"
+                to="/articles"
                 className="inline-flex items-center gap-2 text-secondary-500 hover:text-secondary-600 font-medium"
               >
                 Read Articles

@@ -2,25 +2,25 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
-import { getAllPosts } from '../utils/blogUtils';
+import { getAllArticles } from '../utils/articleUtils';
 import { SearchInput } from '../components/common/SearchInput';
 
-const Blog = () => {
-  const [posts, setPosts] = useState([]);
+const Articles = () => {
+  const [articles, setArticles] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    const loadPosts = async () => {
-      const allPosts = await getAllPosts();
-      setPosts(allPosts);
+    const loadArticles = async () => {
+      const allArticles = await getAllArticles();
+      setArticles(allArticles);
     };
-    loadPosts();
+    loadArticles();
   }, []);
 
-  const filteredPosts = posts.filter(post =>
-    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+  const filteredArticles = articles.filter(article =>
+    article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    article.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    article.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
   const formatDate = (dateString) => {
@@ -47,30 +47,30 @@ const Blog = () => {
             <SearchInput
               value={searchQuery}
               onChange={setSearchQuery}
-              placeholder="Search blog posts..."
+              placeholder="Search articles..."
             />
           </div>
         </div>
       </div>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {filteredPosts.map((post) => (
+        {filteredArticles.map((article) => (
           <Link
-            key={post.slug}
-            to={`/blog/${post.slug}`}
+            key={article.slug}
+            to={`/articles/${article.slug}`}
             className="card p-6 hover:transform hover:scale-105 transition-all flex flex-col"
           >
             <div className="flex-1">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                {post.title}
+                {article.title}
               </h2>
               <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                {formatDate(post.date)}
+                {formatDate(article.date)}
               </div>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {post.excerpt}
+                {article.excerpt}
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {post.tags.map((tag) => (
+                {article.tags.map((tag) => (
                   <span
                     key={tag}
                     className="px-2 py-1 bg-primary-100 dark:bg-primary-900/30 
@@ -91,9 +91,9 @@ const Blog = () => {
             </div>
           </Link>
         ))}
-        {filteredPosts.length === 0 && (
+        {filteredArticles.length === 0 && (
           <div className="col-span-full text-center py-8 text-gray-500 dark:text-gray-400">
-            No blog posts found matching your search.
+            No articles found matching your search.
           </div>
         )}
       </div>
@@ -101,4 +101,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Articles;
