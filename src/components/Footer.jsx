@@ -53,7 +53,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-600 dark:text-gray-300 text-sm mb-4 md:mb-0">
-              © 2023 Tamim Ahasan Rijon. All rights reserved.
+              © 2025 Tamim Ahasan Rijon. All rights reserved.
             </div>
             <div className="flex space-x-6">
               <SocialLink href="https://github.com/tamim-ar" icon={<FaGithub size={20} />} />
