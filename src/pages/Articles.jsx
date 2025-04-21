@@ -17,11 +17,20 @@ const Articles = () => {
     loadArticles();
   }, []);
 
-  const filteredArticles = articles.filter(article =>
-    article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    article.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    article.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
-  );
+  const searchKeywords = searchQuery.toLowerCase().split(' ').filter(word => word.length > 0);
+
+  const filteredArticles = articles.filter(article => {
+    if (searchKeywords.length === 0) return true;
+
+    const searchableText = [
+      article.title,
+      article.excerpt,
+      ...article.tags,
+      article.content
+    ].join(' ').toLowerCase();
+
+    return searchKeywords.every(keyword => searchableText.includes(keyword));
+  });
 
   const formatDate = (dateString) => {
     try {
@@ -42,14 +51,13 @@ const Articles = () => {
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
           Technical articles about software testing, automation strategies, quality assurance best practices, and development workflows.
         </p>
-        <div className="flex justify-end">
-          <div className="w-full max-w-md">
-            <SearchInput
-              value={searchQuery}
-              onChange={setSearchQuery}
-              placeholder="Search articles..."
-            />
-          </div>
+        <div className="mb-8">
+          <SearchInput
+            value={searchQuery}
+            onChange={setSearchQuery}
+            placeholder="Search by title, content, or tags..."
+            className="w-full"
+          />
         </div>
       </div>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

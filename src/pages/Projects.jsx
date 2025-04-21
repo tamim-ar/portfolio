@@ -57,13 +57,46 @@ const Projects = () => {
     }
   ];
 
-  const filteredProjects = projects.filter(project =>
-    project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    project.technologies.some(tech => 
-      tech.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-  );
+  const categoryKeywords = {
+    'Competitive Programming': ['algorithms', 'coding', 'problem solving', 'competitive'],
+    'Learning & Practice': ['learning', 'tutorials', 'examples', 'practice'],
+    'Framework Practice': ['frameworks', 'libraries', 'development']
+  };
+
+  const searchKeywords = searchQuery.toLowerCase().split(' ').filter(word => word.length > 0);
+
+  const filteredProjects = projects.filter(project => {
+    if (searchKeywords.length === 0) return true;
+
+    const searchableText = [
+      project.name,
+      project.description,
+      ...project.technologies,
+      project.github
+    ].join(' ').toLowerCase();
+
+    return searchKeywords.every(keyword => searchableText.includes(keyword));
+  });
+
+  const filteredPracticeRepos = practiceRepos.map(category => ({
+    ...category,
+    repos: category.repos.filter(repo => {
+      if (searchKeywords.length === 0) return true;
+
+      const categorySpecificKeywords = categoryKeywords[category.category] || [];
+      const searchableText = [
+        repo.name,
+        repo.description,
+        category.category,
+        ...categorySpecificKeywords,
+        repo.link
+      ].join(' ').toLowerCase();
+
+      return searchKeywords.every(keyword => searchableText.includes(keyword));
+    })
+  })).filter(category => category.repos.length > 0);
+
+  const hasResults = filteredProjects.length > 0 || filteredPracticeRepos.length > 0;
 
   return (
     <motion.div
@@ -80,59 +113,72 @@ const Projects = () => {
         </p>
       </div>
 
-      <section className="mb-16">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold text-gray-800 dark:text-white">Featured Projects</h2>
-          <SearchInput
-            value={searchQuery}
-            onChange={setSearchQuery}
-            placeholder="Search projects..."
-          />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.name} {...project} />
-          ))}
-          {filteredProjects.length === 0 && (
-            <div className="col-span-full text-center py-8 text-gray-500 dark:text-gray-400">
-              No projects found matching your search.
-            </div>
-          )}
-        </div>
-      </section>
+      <div className="sticky top-20 z-10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm py-4 mb-8">
+        <SearchInput
+          value={searchQuery}
+          onChange={setSearchQuery}
+          placeholder="Search all projects, repositories, and technologies..."
+          className="w-full"
+        />
+      </div>
 
-      <section>
-        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">Learning & Practice</h2>
-        {practiceRepos.map((category) => (
-          <div key={category.category} className="mb-12">
-            <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-4">
-              {category.category}
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {category.repos.map((repo) => (
-                <a 
-                  key={repo.name}
-                  href={repo.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Card className="hover:scale-105 transition-transform h-full">
-                    <h4 className="text-lg font-medium text-gray-800 dark:text-white mb-2">
-                      {repo.name}
-                    </h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
-                      {repo.description}
-                    </p>
-                    <div className="mt-4 text-primary-500 dark:text-primary-400">
-                      View Repository →
-                    </div>
-                  </Card>
-                </a>
-              ))}
-            </div>
+      {!hasResults && (
+        <div className="text-center py-12">
+          <p className="text-gray-500 dark:text-gray-400 text-lg">
+            No results found for "{searchQuery}"
+          </p>
+        </div>
+      )}
+
+      {filteredProjects.length > 0 && (
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">
+            Featured Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProjects.map((project) => (
+              <ProjectCard key={project.name} {...project} />
+            ))}
           </div>
-        ))}
-      </section>
+        </section>
+      )}
+
+      {filteredPracticeRepos.length > 0 && (
+        <section>
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">
+            Learning & Practice
+          </h2>
+          {filteredPracticeRepos.map((category) => (
+            <div key={category.category} className="mb-12">
+              <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-4">
+                {category.category}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {category.repos.map((repo) => (
+                  <a 
+                    key={repo.name}
+                    href={repo.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Card className="hover:scale-105 transition-transform h-full">
+                      <h4 className="text-lg font-medium text-gray-800 dark:text-white mb-2">
+                        {repo.name}
+                      </h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                        {repo.description}
+                      </p>
+                      <div className="mt-4 text-primary-500 dark:text-primary-400">
+                        View Repository →
+                      </div>
+                    </Card>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+      )}
     </motion.div>
   );
 };
