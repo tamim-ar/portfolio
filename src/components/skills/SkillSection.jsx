@@ -12,7 +12,7 @@ export const SkillSection = () => {
     {
       title: 'Programming Languages',
       icon: <FaCode />,
-      skills: ['Python', 'Java', 'JavaScript']
+      skills: ['C', 'Java', 'Python', 'JavaScript']
     },
     {
       title: 'Frontend Development',
