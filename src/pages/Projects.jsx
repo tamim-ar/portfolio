@@ -30,6 +30,12 @@ const Projects = () => {
 
   const practiceRepos = [
     {
+      category: 'Software Quality Assurance',
+      repos: [
+        { name: 'QA Explorer', link: 'https://github.com/tamim-ar/hackerrank', description: ' My personal repo for software testing insights and techniques' }
+      ]
+    },
+    {
       category: 'Competitive Programming',
       repos: [
         { name: 'HackerRank Solutions', link: 'https://github.com/tamim-ar/hackerrank', description: 'Solutions to HackerRank programming challenges' },
