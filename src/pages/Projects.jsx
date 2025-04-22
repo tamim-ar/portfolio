@@ -111,6 +111,7 @@ const Projects = () => {
       className="container mx-auto px-4 py-16 max-w-7xl"
     >
       <div className="mb-8">
+        <br />
         <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
           Project Portfolio
         </h1>
