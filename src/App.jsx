@@ -8,11 +8,13 @@ import Projects from './pages/Projects';
 import Articles from './pages/Articles';
 import Article from './pages/Article';
 import { ThemeProvider } from './context/ThemeContext';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen bg-white dark:bg-slate-900">
           <div className="relative">
             {/* Background decorations */}
