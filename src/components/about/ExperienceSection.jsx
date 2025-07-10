@@ -12,7 +12,7 @@ export const ExperienceSection = () => (
           Quantigo AI
         </p>
         <p className="text-gray-600 dark:text-gray-400 text-sm mt-2">
-          Jan 2025 - Present • Remote
+          Jan 2025 - Jun 2025 • Remote
         </p>
         <ul className="mt-4 space-y-2 list-disc list-inside text-gray-600 dark:text-gray-300">
           <li>Freelance position focused on data annotation and labeling</li>
