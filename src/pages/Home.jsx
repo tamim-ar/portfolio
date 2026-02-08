@@ -98,7 +98,7 @@ const Home = () => {
                   Ensuring software excellence through comprehensive testing and automation strategies.
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                  <a href="https://drive.google.com/file/d/1ezqxBobCsZ5y-jpUVTZsi9rwEZklKj_U/view?usp=sharing"
+                  <a href="https://drive.google.com/file/d/1Oe-BsRZtfYKdU9Qsqlnit77DOrqn-faJ/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all"
@@ -131,7 +131,7 @@ const Home = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl blur-2xl opacity-20 animate-pulse" />
                 <img
-                  src="https://i.ibb.co.com/qYYFtyXB/Original.jpg"
+                  src="https://i.ibb.co.com/nN97LMcD/Gemini-Generated-Image-688bfv688bfv688b.jpg"
                   alt="Tamim Ahasan Rijon"
                   className="relative rounded-3xl shadow-2xl w-full max-w-md mx-auto"
                 />
